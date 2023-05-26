@@ -1484,6 +1484,8 @@ public class projeto {
           cortaDialogo();
           System.out.println("Você está salva.");
           cortaDialogo();
+	  System.out.println("[3/3] Pessoas salvas");
+          cortaDialogo();
           System.out.println("Alya: MÃE!!!");
           cortaDialogo();
           System.out.println("Fim de jogo");
