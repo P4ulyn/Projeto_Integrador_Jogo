@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.util.Random;
 
+
 public class projeto {
   
   // Funcao que representa o menu
@@ -45,11 +46,11 @@ public class projeto {
     System.out.println("Direcao de arte:\n Pedro Arthur \n Paulo Henrique \n Gustavo Antonio \n");
 
     
-    System.out.println("Aperte qualquer tecla para voltar ao menu");
-    char char1 = sc.nextLine().charAt(0);
+    System.out.println("Aperte qualquer tecla para Sair");
+    sc.nextLine();
 
-    // Chamada de funcao menu.
-    menuInicial(); 
+    // Chamada de funcao Sair.
+    sairGame(); 
   }
 
   // Funcao que sai do jogo
@@ -236,6 +237,18 @@ public class projeto {
     }
     else {
       System.out.println("Voce é burro ou oq nao sabe digitar s ou n?");
+      System.out.println("Seguir o Senhor: S ou N?");
+     Simounao = sc.next().charAt(0);
+
+    if (Simounao == 's'){
+      System.out.println(" /Você segue o Velho que, dentre grama e flores, se dirige até uma pequena estrada de pedregulhos que levam até uma ponte");
+    }
+    else if (Simounao =='n') {
+      System.out.println("Nem pensa nisso, esse é o tutorial ainda, não estamos afim de criar mil finais pra esse jogo lmao.");
+      cortaDialogo();
+      
+      System.out.println("/Você segue o Velho que, dentre grama e flores, se dirige até uma pequena estrada de pedregulhos que levam até uma ponte.");
+    }
 
     }
       cortaDialogo();
@@ -363,7 +376,7 @@ public class projeto {
           cortaDialogo();
           System.out.println("Alya: …");
           cortaDialogo();
-          
+          break;
         }
     }
     System.out.println("   /O vento começa a balançar os vários lenços coloridos amarrados nas bordas da ponte, uivando levemente em sintonia com algumas folhas vindas do bosque");
@@ -601,7 +614,7 @@ public class projeto {
       cortaDialogo();
       System.out.println("Você decide NEM SEQUER TENTAR ser a merda da guardiã. \nVocê Perdeu.");
       cortaDialogo();
-      menuInicial();
+      sairGame();
     }
 
     System.out.println("  /Você bate na porta e um menino de seus 16 anos abre. Por algum motivo que você não sabe, você sabe exatamente que ele é o Yzac.");
@@ -658,7 +671,7 @@ public class projeto {
     cortaDialogo();
 
       System.out.println("Você queimou vivo (ou morto?) a pessoa que você precisava salvar, talvez paciência não seja uma das suas melhores qualidades… \nVocê Perdeu");
-    menuInicial();
+    sairGame();
     }
 
     System.out.println("Eu sei que isso não deve ser legal, eu me sinto como um vendedor ambulante batendo na porta dos outros pra vender, sei lá, sabão caseiro.\n Mas, talvez não seja tão mal tentar… sabe… se livrar desse peso");
@@ -803,7 +816,8 @@ public class projeto {
             break;
 
           default:
-          System.out.println("Digite um número válido");
+          System.out.println("triste sua ciruação em amigo, nao sabe digitar um numero certo, foda hein");
+            cortaDialogo();
           break;
         }
         // fim do switch dentro do switch, já checado
@@ -811,8 +825,9 @@ public class projeto {
         break;
         
       default:
-        System.out.println("Mana para de ser burra e digita certo");
-        break;
+        System.out.println("O narrador preferiu ir de comes e bebes, do que continuar contando a historia para alguém tao burro assim. beijos beijos beijos");
+        sairGame();
+        
     }
 
     // Fim do switch inicial
@@ -837,6 +852,7 @@ public class projeto {
       }
       else if (escolha6 == 2){
         System.out.println("Você vê isso hein Yzac?");
+        System.out.println("Digite n para Sim ou n para Não");
         char digite= sc.next().charAt(0);
 
         if (digite == 's'){
@@ -892,12 +908,12 @@ public class projeto {
         System.out.println("MAS COMO CARALHOS VOCÊ CHEGOU NESSA CONCLUSÃO??? ");
         cortaDialogo();
         System.out.println("Você decepcionou fortemente o narrador e ele decidiu que não vai mais narrar pra alguém como você. \nVocê Perdeu.");
-        cortaDialogo();
-        menuInicial();
+        sairGame();
         break;
       default:
-        System.out.println("Digite um número válido");
-        cortaDialogo();
+        System.out.println("MEU DEUS QUAL O SEU PROBLEMA?? NÃO SABE DIGITAR 1,2 OU 3?? ");
+        System.out.println("    O narrador desistiu de vc e da humanidade e se matou por sua culpa ");
+        sairGame();
         break;
     }
     
@@ -984,8 +1000,8 @@ public class projeto {
         cortaDialogo();
         break;
       default:
-        System.out.println("Digite um número válido");
-        cortaDialogo();
+        System.out.println("Voce é tão burro que o narrador perdeu as esperanças e desistiu de ti por que a final vc nao sabe digitar 1,2 ou 3 como a pergunta pede. beijos beijos beijos disse o narrador, como sua ultima palavra antes de se matar, por sua culpa");
+        sairGame();
         break;
     }
 
@@ -1055,7 +1071,7 @@ public class projeto {
 
     boolean acertouMoa = false;
 
-    do {
+     while (acertouMoa == false) {
       System.out.println("1. Em casa \n2. Na neve \n3. Na Fita");
       int escolhaOndeMoa = sc.nextInt();
       switch(escolhaOndeMoa) {
@@ -1071,10 +1087,11 @@ public class projeto {
           acertouMoa = true;
           break;
         default:
-          System.out.println("Digite um número certo");
-          cortaDialogo();
+          System.out.println("por que deus alguém tao burro assim, que não sabe digitar um numero certo... olha eu deisto.");
+          sairGame();
+          break;
       }
-    } while (acertouMoa == true);
+    }
 
     System.out.println("Tudo se apaga...");
     cortaDialogo();
@@ -1201,7 +1218,7 @@ public class projeto {
     cortaDialogo();
     System.out.println("[Yzac não existe mais.]");
     cortaDialogo();
-    System.out.println("[2/4 salvos]");
+    System.out.println("[2/3 salvos]");
     cortaDialogo();
     System.out.println("[Últimas Palavras: espero que você aprenda a amar o perdão pelas falhas, Alya. Assim, suas falhas serão perdoadas pelo amor.]");
     cortaDialogo();
@@ -1408,8 +1425,6 @@ public class projeto {
     cortaDialogo();
     System.out.println("Mãe: Como você cresceu.");
     cortaDialogo();
-    System.out.println("Mãe: Como você cresceu.");
-    cortaDialogo();
     System.out.println("Alya: Você… Tá viva?");
     cortaDialogo();
     System.out.println("Mãe: Você sempre me deixou viva, minha pequena.");
@@ -1484,8 +1499,6 @@ public class projeto {
           cortaDialogo();
           System.out.println("Você está salva.");
           cortaDialogo();
-	  System.out.println("[3/3] Pessoas salvas");
-          cortaDialogo();
           System.out.println("Alya: MÃE!!!");
           cortaDialogo();
           System.out.println("Fim de jogo");
@@ -1505,11 +1518,13 @@ public class projeto {
         cortaDialogo();
         System.out.println("Você está salva.");
         cortaDialogo();
+        System.out.println("[3/3] Pessoas salvas");
+        cortaDialogo();
         System.out.println("Alya: MÃE!!!");
         cortaDialogo();
         System.out.println("Fim de jogo");
         cortaDialogo();
-        menuInicial();
+        sairGame();
     }
   }
 
